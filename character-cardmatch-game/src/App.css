@@ -1,0 +1,112 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('/supermariobackground.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;  /* Keeps the background fixed */
+  background-repeat: no-repeat;
+  height: 100%;  /* Ensure the body takes up the full height */
+  width: 100%;   /* Ensure the body takes up the full width */
+  overflow: hidden; /* Prevent the entire page from scrolling */
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align at the top of the page */
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(245, 245, 245, 0.8); /* Semi-transparent background */
+  border-radius: 8px;
+  width: 100%;
+  position: relative;
+  z-index: 1; /* Ensures content is above the background */
+  overflow-y: auto;  /* Allows scrolling within the content area */
+  max-height: 100vh; /* Limit the height to the viewport size */
+}
+
+/* New Wavy Animation */
+@keyframes waveAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.App h1 {
+  margin: 0 0 30px 0;
+  font-size: 3rem;
+  display: inline-block;
+  letter-spacing: 5px;
+}
+
+.App h1 span {
+  display: inline-block;
+  animation: waveAnimation 1s ease-in-out infinite;
+}
+
+.App h1 span:nth-child(odd) {
+  animation-delay: 0.1s;
+}
+
+.App h1 span:nth-child(even) {
+  animation-delay: 0.2s;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  justify-content: center;
+  justify-items: center;
+  max-width: 800px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 30px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:focus {
+  outline: none;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #ff6347;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.App h1 {
+  margin-left: 75px;
+}
+
+.App button {
+  margin-left: 95px;
+}
